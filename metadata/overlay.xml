@@ -9,8 +9,7 @@
 			<email>stinger@pragmatic-kernel.fr</email>
 			<name>Dumb'n Dumber</name>
 		</owner>
-		<source type="git">git@github.com:StinGer-ShoGuN/dumbndumber.git</source>
-		<source type="git">https://github.com/StinGer-ShoGuN/dumbndumber.git</source>
+		<source type="git">git://github.com/StinGer-ShoGuN/dumbndumber.git</source>
 	</repo>
 </repositories>
 
