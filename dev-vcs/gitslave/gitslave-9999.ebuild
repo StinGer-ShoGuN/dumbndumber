@@ -9,7 +9,7 @@ inherit git-2
 DESCRIPTION="Repository tool for multi-repository management"
 HOMEPAGE="http://gitslave.sf.net"
 SRC_URI=""
-EGIT_REPO_URI="git://gitslave.git.sourceforge.net/gitroot/gitslave/gitslave"
+EGIT_REPO_URI="git://git.code.sf.net/p/gitslave/code"
 
 LICENSE="LGPL-2.1-fixed"
 SLOT="0"
