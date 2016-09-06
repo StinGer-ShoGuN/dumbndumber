@@ -7,7 +7,7 @@
 		Perl script to manage several git repositories at once and synchronise them all together.
 	</longdescription>
 	<use>
-		<flag name="progressbar">Uses <pkg>dev-perl/Term-ProgressBar</pkg>to display a progress bar on various actions.
+		<flag name="progressbar">Uses <pkg>dev-perl/Term-ProgressBar</pkg>to display a progress bar on various actions.</flag>
 		<flag name="parallel">Uses <pkg>dev-perl/Parallel-Iterator</pkg> to perform actions on several repositories in parrallel.</flag>
 	</use>
 </pkgmetadata>
