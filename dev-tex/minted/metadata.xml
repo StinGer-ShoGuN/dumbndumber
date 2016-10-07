@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer type="project">
-    <email>sci@gentoo.org</email>
+  <maintainer type="person">
+	  <email>baptiste.marechal.2009@asso-supelec.org</email>
+	  <name> Baptiste MARÉCHAL</name>
   </maintainer>
   <upstream>
     <remote-id type="github">gpoore/minted</remote-id>
