@@ -104,3 +104,5 @@
   Switch to GitHub sources.
   Added pyserial-3.1.0 release.
 
+  07 Nov 2016; Baptiste Maréchal <baptiste.marechal@withings.com> pyserial-3.2.1.ebuild:
+  Added pyserial-3.2.1 release.
