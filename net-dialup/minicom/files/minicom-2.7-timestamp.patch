@@ -1,0 +1,11 @@
+--- minicom-2.7.orig/src/vt100.c	2015-11-17 09:55:58.000000000 +0100
++++ minicom-2.7/src/vt100.c	2015-11-17 09:56:12.000000000 +0100
+@@ -896,7 +896,7 @@
+   if (!ch)
+     return;
+ 
+-  if (last_ch == '\n'
++  if (last_ch == '\r'
+       && vt_line_timestamp != TIMESTAMP_LINE_OFF)
+     {
+       struct timeval tmstmp_now;
