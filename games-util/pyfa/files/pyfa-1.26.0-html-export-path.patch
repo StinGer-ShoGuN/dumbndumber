@@ -1,0 +1,22 @@
+diff --git a/service/settings.py b/service/settings.py
+index 89f8719..cc32bf0 100644
+--- a/service/settings.py
++++ b/service/settings.py
+@@ -21,6 +21,7 @@ import cPickle
+ import os.path
+ import config
+ import urllib2
++import sys
+ 
+ class SettingsProvider():
+     BASE_PATH = os.path.join(config.savePath, "settings")
+@@ -252,7 +253,7 @@ class HTMLExportSettings():
+         return cls._instance
+ 
+     def __init__(self):
+-        serviceHTMLExportDefaultSettings = {"enabled": False, "path": config.pyfaPath + os.sep + 'pyfaFits.html', "minimal": False }
++        serviceHTMLExportDefaultSettings = {"enabled": False, "path": unicode(os.path.expanduser(os.path.join('~', 'pyfaFits.html')), sys.getfilesystemencoding()), "minimal": False }
+         self.serviceHTMLExportSettings = SettingsProvider.getInstance().getSettings("pyfaServiceHTMLExportSettings", serviceHTMLExportDefaultSettings)
+ 
+     def getEnabled(self):
+
