@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>stinger@pragmatic-kernel.fr</email>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<email>doomer3d@gmail.com</email>
+			<name>Artem Galichkin</name>
+		</maintainer>
+		<remote-id type="github">QtDesktop/screengrab</remote-id>
+	</upstream>
+</pkgmetadata>
