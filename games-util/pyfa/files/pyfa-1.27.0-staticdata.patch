@@ -1,0 +1,27 @@
+From 5dff4346cc8aa26542e154cbc106c24109fe2a84 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Baptiste=20MAR=C3=89CHAL?= <stinger@pragmatic-kernel.fr>
+Date: Fri, 17 Feb 2017 15:34:48 +0100
+Subject: [PATCH] Make gameDB path settable from configforced.
+
+---
+ config.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/config.py b/config.py
+index 32c6876..d46d35a 100644
+--- a/config.py
++++ b/config.py
+@@ -122,7 +122,9 @@ def defPaths(customSavePath):
+     # The database where the static EVE data from the datadump is kept.
+     # This is not the standard sqlite datadump but a modified version created by eos
+     # maintenance script
+-    gameDB = getPyfaPath("eve.db")
++    gameDB = getattr(configforced, "gameDB", None)
++    if pyfaPath is None:
++        gameDB = getPyfaPath("eve.db")
+ 
+     # DON'T MODIFY ANYTHING BELOW!
+     import eos.config
+-- 
+2.10.2
+

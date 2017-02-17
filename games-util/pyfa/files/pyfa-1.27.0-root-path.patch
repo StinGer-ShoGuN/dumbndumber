@@ -1,0 +1,26 @@
+From e333a467150b3d6bd08e411a50c6cedb20ec4bc0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Baptiste=20MAR=C3=89CHAL?= <stinger@pragmatic-kernel.fr>
+Date: Fri, 17 Feb 2017 17:49:57 +0100
+Subject: [PATCH] Use $(python_get_sitedir)/pyfa as PyfaPath root.
+
+---
+ config.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/config.py b/config.py
+index d46d35a..6b8ae68 100644
+--- a/config.py
++++ b/config.py
+@@ -137,8 +137,7 @@ def defPaths(customSavePath):
+ 
+ 
+ def getPyfaPath(Append=None):
+-    base = getattr(sys.modules['__main__'], "__file__", sys.executable) if isFrozen() else sys.argv[0]
+-    root = os.path.dirname(os.path.realpath(os.path.abspath(base)))
++    root = u'%%SITEDIR%%/pyfa'
+ 
+     if Append:
+         path = parsePath(root, Append)
+-- 
+2.10.2
+
