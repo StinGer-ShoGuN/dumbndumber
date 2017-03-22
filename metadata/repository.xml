@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories encoding="unicode" version="1.1">
+  <repo priority="50" quality="experimental">
+    <name>dumbndumber</name>
+    <description>Extra useful or interesting packages not found in official repositories. <br />
+Some of them may be andidates to be added to officiel repos.</description>
+    <homepage>https://github.com/StinGer-ShoGuN/dumbndumber</homepage>
+    <owner>
+      <email>baptiste.marechal.2009@asso-supelec.org</email>
+      <name>Baptiste MARÉCHAL</name>
+    </owner>
+    <owner>
+      <name>Guilhem BACCIALONE</name>
+    </owner>
+    <source branch="master" type="git">git://github.com/StinGer-ShoGuN/dumbndumber</source>
+  </repo>
+</repositories>
+
