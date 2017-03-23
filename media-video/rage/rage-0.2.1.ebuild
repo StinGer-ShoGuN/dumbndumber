@@ -12,9 +12,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="( >=dev-libs/efl-1.18.4 )
-( >=sys-devel/autoconf-2.59 )
-( >=sys-devel/automake-1.10 )
-		sys-devel/gettext
-		sys-devel/libtool"
+DEPEND="( >=dev-libs/efl-1.18.4 )"
 RDEPEND="${DEPEND}"
