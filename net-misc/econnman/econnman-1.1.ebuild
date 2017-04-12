@@ -4,8 +4,8 @@
 EAPI=6
 
 DESCRIPTION="ConnMan User Interface in EFL"
-HOMEPAGE="https://git.enlightenment.org/apps/econnman.git/about/"
-SRC_URI="https://download.enlightenment.org/rel/apps/econnman/econnman-1.1.tar.gz"
+HOMEPAGE="https://git.enlightenment.org/apps/${PN}.git/about/"
+SRC_URI="https://download.enlightenment.org/rel/apps/${PN}/${P}.tar.gz"
 
 PYTHON_COMPAT=( python2_7 )
 
