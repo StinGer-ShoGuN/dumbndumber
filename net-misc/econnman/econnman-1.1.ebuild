@@ -9,7 +9,7 @@ SRC_URI="https://download.enlightenment.org/rel/apps/econnman/econnman-1.1.tar.g
 
 PYTHON_COMPAT=( python2_7 )
 
-LICENSE="BSD2Clause"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
