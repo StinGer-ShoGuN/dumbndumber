@@ -14,5 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="( >=dev-libs/efl-1.18.4 )"
+DEPEND="( >=dev-libs/efl-1.18.4 )
+		net-misc/connman"
 RDEPEND="${DEPEND}"
