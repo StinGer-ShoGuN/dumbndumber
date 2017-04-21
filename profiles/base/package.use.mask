@@ -1,0 +1,4 @@
+# Baptiste Maréchal <baptiste.marechal.2009@asso-supelec.org> (21 Apr 2017)
+# Ebuild is under development. Flag is not yet functional.
+net-im/ejabberd elixir
+
