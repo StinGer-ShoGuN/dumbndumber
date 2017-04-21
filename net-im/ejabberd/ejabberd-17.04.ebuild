@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~sparc ~x86"
 REQUIRED_USE="mssql? ( odbc )"
 # TODO: Add 'tools' flag.
-IUSE="captcha debug full-xml hipe ldap mssql mysql nls odbc pam postgres redis
+IUSE="captcha debug elixir full-xml hipe ldap mssql mysql nls odbc pam postgres redis
 	riak roster-gw sqlite zlib"
 
 RESTRICT="test"
@@ -28,31 +28,30 @@ RESTRICT="test"
 # TODO: 	>=dev-erlang/moka-1.0.5b
 # TODO: )
 CDEPEND="
-	>=dev-erlang/cache_tab-1.0.6
-	>=dev-erlang/esip-1.0.10
-	>=dev-erlang/fast_tls-1.0.10
-	>=dev-erlang/fast_xml-1.1.19
-	>=dev-erlang/fast_yaml-1.0.8
+	>=dev-erlang/cache_tab-1.0.7
+	>=dev-erlang/esip-1.0.11
+	>=dev-erlang/fast_tls-1.0.11
+	>=dev-erlang/fast_xml-1.1.21
+	>=dev-erlang/fast_yaml-1.0.9
 	>=dev-erlang/jiffy-0.14.8
 	>=dev-erlang/lager-3.2.1
 	>=dev-erlang/luerl-0.2
 	>=dev-erlang/p1_oauth2-0.6.1
-	>=dev-erlang/p1_utils-1.0.6
-	>=dev-erlang/stringprep-1.0.7
-	>=dev-erlang/stun-1.0.9
+	>=dev-erlang/p1_utils-1.0.8
+	>=dev-erlang/stringprep-1.0.8
+	>=dev-erlang/stun-1.0.10
+	>=dev-erlang/xmpp-1.1.9
 	>=dev-lang/erlang-17.1[hipe?,odbc?,ssl]
 	>=net-im/jabber-base-0.01
+	elixir? ( >=dev-lang/elixir-1.2.6 )
 	ldap? ( =net-nds/openldap-2* )
 	mysql? ( >=dev-erlang/p1_mysql-1.0.2 )
-	nls? ( >=dev-erlang/iconv-1.0.3 )
+	nls? ( >=dev-erlang/iconv-1.0.4 )
 	odbc? ( dev-db/unixODBC )
-	pam? ( >=dev-erlang/p1_pam-1.0.0 )
+	pam? ( >=dev-erlang/p1_pam-1.0.2 )
 	postgres? ( >=dev-erlang/p1_pgsql-1.1.2 )
 	redis? ( >=dev-erlang/eredis-1.0.8 )
-	riak? (
-		>=dev-erlang/hamcrest-0.1.0_p20150103
-		>=dev-erlang/riakc-2.4.1
-	)
+	riak? ( >=dev-erlang/riakc-2.4.1 )
 	sqlite? ( >=dev-erlang/sqlite3-1.1.5 )
 	zlib? ( >=dev-erlang/ezlib-1.0.2 )"
 DEPEND="${CDEPEND}
@@ -61,7 +60,10 @@ RDEPEND="${CDEPEND}
 	captcha? ( media-gfx/imagemagick[truetype,png] )"
 
 DOCS=( README )
-PATCHES=( "${FILESDIR}/${PN}-17.01-ejabberdctl.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-17.01-ejabberdctl.patch"
+	"${FILESDIR}/${PN}-17.01-ejabberdctl.patch"
+)
 
 EJABBERD_CERT="${EPREFIX}/etc/ssl/ejabberd/server.pem"
 # Paths in net-im/jabber-base
@@ -187,7 +189,7 @@ src_prepare() {
 
 	# Fix bug #591862. ERL_LIBS should point directly to ejabberd directory
 	# rather than its parent which is default. That way ejabberd directory
-	# takes precedence is module lookup.
+	# takes precedence in module lookup.
 	local ejabberd_erl_libs="$(get_ejabberd_path):$(get_erl_libs)"
 	sed -e "s|\(ERL_LIBS=\){{libdir}}.*|\1${ejabberd_erl_libs}|" \
 		-i "${S}/ejabberdctl.template" \
@@ -199,6 +201,7 @@ src_configure() {
 		--docdir="${EPREFIX}/usr/share/doc/${PF}/html" \
 		--enable-user=jabber \
 		$(use_enable debug) \
+		$(use_enable elixir) \
 		$(use_enable full-xml) \
 		$(use_enable hipe) \
 		$(use_enable mssql) \
