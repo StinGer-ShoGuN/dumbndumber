@@ -15,6 +15,7 @@
 	</longdescription>
 	<use>
 		<flag name="captcha">Support for CAPTCHA Forms (XEP-158) on registration</flag>
+		<flag name="elixir">Support for the elixir programming language.</flag>
 		<flag name="full-xml">Use XML features in XMPP stream (ex: CDATA),
 			requires XML compliant clients</flag>
 		<flag name="hipe">Compile natively with HiPE, not recommended</flag>
