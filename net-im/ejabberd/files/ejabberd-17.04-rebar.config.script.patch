@@ -1,0 +1,28 @@
+From b23fafc73a614aae4d75a1c710184c2ea5b12fa5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Baptiste=20MAR=C3=89CHAL?=
+ <baptiste.marechal.2009@asso-supelec.org>
+Date: Tue, 25 Apr 2017 11:25:05 +0200
+Subject: [PATCH] Do not process stripped dependencies.
+
+Prevent compilation of dependencies already emerged.
+---
+ rebar.config.script | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/rebar.config.script b/rebar.config.script
+index 19142b9..cfe0d3b 100644
+--- a/rebar.config.script
++++ b/rebar.config.script
+@@ -245,7 +245,8 @@ CtParams = fun(CompileOpts) ->
+ GenDepConfigureLine =
+ fun(DepPath, Flags) ->
+ 	["sh -c 'if test ! -f ",DepPath,"config.status -o ",
+-	 "config.status -nt ",DepPath,"config.status; ",
++	 "config.status -nt ",DepPath,"config.status && ",
++	 "test -d ",DepPath,"; ",
+ 	 "then (cd ", DepPath, " && ",
+ 	 "CFLAGS=\"", CFlags,"\" ",
+ 	 "CPPFLAGS=\"", CPPFlags, "\" "
+-- 
+2.10.2
+
