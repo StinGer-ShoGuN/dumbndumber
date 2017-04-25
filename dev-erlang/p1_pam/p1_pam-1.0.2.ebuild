@@ -24,3 +24,5 @@ RDEPEND="${DEPEND}"
 DOCS=( README.md )
 
 S="${WORKDIR}/${MY_P}"
+
+REBAR_APP_SRC="src/epam.app.src"
