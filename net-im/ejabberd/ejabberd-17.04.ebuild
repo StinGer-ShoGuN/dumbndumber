@@ -193,6 +193,8 @@ src_prepare() {
 	sed -e "s|\(ERL_LIBS=\){{libdir}}.*|\1${ejabberd_erl_libs}|" \
 		-i "${S}/ejabberdctl.template" \
 		|| die 'failed to set ERL_LIBS in ejabberdctl.template'
+
+	./autogen.sh
 }
 
 src_configure() {
