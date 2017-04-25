@@ -180,6 +180,9 @@ src_prepare() {
 	default
 
 	rebar_remove_deps
+	for dep in "fast_xml" "xmpp" "p1_utils"; do
+		rebar_fix_include_path $dep
+	done
 	correct_ejabberd_paths
 	set_jabberbase_paths
 	make_ejabberd_service
