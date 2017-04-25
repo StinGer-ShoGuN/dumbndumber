@@ -62,7 +62,6 @@ RDEPEND="${CDEPEND}
 DOCS=( README )
 PATCHES=(
 	"${FILESDIR}/${PN}-17.01-ejabberdctl.patch"
-	"${FILESDIR}/${PN}-17.01-ejabberdctl.patch"
 )
 
 EJABBERD_CERT="${EPREFIX}/etc/ssl/ejabberd/server.pem"
