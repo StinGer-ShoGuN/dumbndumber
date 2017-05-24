@@ -1,0 +1,43 @@
+From cbb6efb92f61a5ecb9756be1b2541ee0042feae2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Baptiste=20MAR=C3=89CHAL?= <baptiste.marechal@withings.com>
+Date: Wed, 24 May 2017 17:04:50 +0200
+Subject: [PATCH] pod2man requires a --name value with newer version.
+
+---
+ Makefile         | 4 ++--
+ contrib/Makefile | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index cd94c89..a4335a7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -9,10 +9,10 @@ JUNK=gits.1 checkdir contrib/gitslave.spec
+ all: $(TARGETS)
+ 
+ gits.1: gits
+-	pod2man < $^ > $@
++	pod2man --name $(shell echo $^ | tr a-z A-Z) < $^ > $@
+ 
+ gits-checkup.1: gits-checkup
+-	pod2man < $^ > $@
++	pod2man --name $(shell echo $^ | tr a-z A-Z) < $^ > $@
+ 
+ contrib/gitslave.spec: contrib/gitslave.spec.in
+ 	if [ -d .git ]; then			    \
+diff --git a/contrib/Makefile b/contrib/Makefile
+index be90187..689bba5 100644
+--- a/contrib/Makefile
++++ b/contrib/Makefile
+@@ -9,7 +9,7 @@ JUNK=gits-checkup.1 gitin.1
+ all: $(TARGETS)
+ 
+ %.1: %
+-	pod2man < $^ > $@
++	pod2man --name $(shell echo $^ | tr a-z A-Z) < $^ > $@
+ 
+ install: $(TARGETS)
+ 	mkdir -p $(DESTDIR)$(man1dir) $(DESTDIR)$(bindir)
+-- 
+2.13.0
+

@@ -1,0 +1,25 @@
+From 321da2eb97bd49eb4d3a19d095cff8a3cda9e3a8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Baptiste=20MAR=C3=89CHAL?= <baptiste.marechal@withings.com>
+Date: Wed, 24 May 2017 15:46:01 +0200
+Subject: [PATCH] Slightly updated regular expression syntax.
+
+---
+ gits | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gits b/gits
+index 6ab5eed..96d1fb6 100755
+--- a/gits
++++ b/gits
+@@ -1103,7 +1103,7 @@ sub releasecheck($@)
+       push(@stashed, $repo);
+       $unclean = 1;
+       # strip out previous commit from WIP stashes (messages are misleading)
+-      $stashes =~ s/^(stash\@{\d+}: )WIP( on .*: [\da-f]+)\.\.\..*$/${1}Work-in-Progress${2}/mg;
++      $stashes =~ s/^(stash\@\{\d+\}: )WIP( on .*: [\da-f]+)\.\.\..*$/${1}Work-in-Progress${2}/mg;
+       $msg .= $stashes;
+     }
+ 
+-- 
+2.13.0
+
