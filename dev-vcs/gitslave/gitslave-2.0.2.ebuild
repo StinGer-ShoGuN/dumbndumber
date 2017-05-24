@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,13 +8,13 @@ DESCRIPTION="Repository tool for multi-repository management"
 HOMEPAGE="http://gitslave.sf.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-LICENSE="LGPL-2.1-fixed"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="progressbar parallel"
 
 DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND} 
+RDEPEND="${DEPEND}
 	>=dev-vcs/git-1.6
 	progressbar? ( dev-perl/Term-ProgressBar )
 	parallel? ( dev-perl/Parallel-Iterator )"
