@@ -48,7 +48,7 @@ CDEPEND="
 	mysql? ( >=dev-erlang/p1_mysql-1.0.2 )
 	nls? ( >=dev-erlang/iconv-1.0.4 )
 	odbc? ( dev-db/unixODBC )
-	pam? ( >=dev-erlang/p1_pam-1.0.2 )
+	pam? ( >=dev-erlang/epam-1.0.2 )
 	postgres? ( >=dev-erlang/p1_pgsql-1.1.2 )
 	redis? ( >=dev-erlang/eredis-1.0.8 )
 	riak? ( >=dev-erlang/riakc-2.4.1 )
