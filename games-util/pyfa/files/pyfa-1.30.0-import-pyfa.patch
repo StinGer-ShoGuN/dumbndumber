@@ -1,0 +1,24 @@
+From 2ceefda54e263dc51df5a1ca60c1f43f0e473861 Mon Sep 17 00:00:00 2001
+From: StinGer ShoGuN <stinger@pragmatic-kernel.fr>
+Date: Wed, 2 Aug 2017 13:14:04 +0200
+Subject: [PATCH] Make import statement working for system wide installations.
+
+---
+ pyfa.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/pyfa.py b/pyfa.py
+index 4faa1edd..9cfa5e23 100755
+--- a/pyfa.py
++++ b/pyfa.py
+@@ -23,6 +23,7 @@ import os
+ import platform
+ import re
+ import sys
++sys.path.append(os.path.join("%%SITEDIR%%", "pyfa"))
+ import traceback
+ from optparse import AmbiguousOptionError, BadOptionError, OptionParser
+ 
+-- 
+2.13.0
+

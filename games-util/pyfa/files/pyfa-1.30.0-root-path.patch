@@ -1,0 +1,26 @@
+From feba2338c7992379497e30ed9795c5d573576906 Mon Sep 17 00:00:00 2001
+From: StinGer ShoGuN <stinger@pragmatic-kernel.fr>
+Date: Wed, 2 Aug 2017 13:18:50 +0200
+Subject: [PATCH] Use $(python_get_sitedir)/pyfa as PyfaPath root.
+
+---
+ config.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/config.py b/config.py
+index c68159c5..0b42abf5 100644
+--- a/config.py
++++ b/config.py
+@@ -45,8 +45,7 @@ def __createDirs(path):
+ 
+ 
+ def getPyfaRoot():
+-    base = getattr(sys.modules['__main__'], "__file__", sys.executable) if isFrozen() else sys.argv[0]
+-    root = os.path.dirname(os.path.realpath(os.path.abspath(base)))
++    root = u'%%SITEDIR%%/pyfa'
+     root = unicode(root, sys.getfilesystemencoding())
+     return root
+ 
+-- 
+2.13.0
+
