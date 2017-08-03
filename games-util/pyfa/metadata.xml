@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <name>Baptiste MARÉCHAL</name>
+        <email>stinger@pragmatic-kernel.fr</email>
+    </maintainer>
+    <upstream>
+        <remote-id type="github">pyfa-org/Pyfa</remote-id>
+        <maintainer status="active">
+            <name>pyfa-org</name>
+        </maintainer>
+        <changelog>https://github.com/pyfa-org/Pyfa/releases</changelog>
+        <bugs-to>https://github.com/pyfa-org/Pyfa/issues</bugs-to>
+    </upstream>
+    <longdescription>
+        <cat>games-util</cat>
+        <pkg>games-util/pyfa</pkg>
+        Python Fitting Assistant is a tool to help fitting vessels for the EvE Online MMORPG.
+        It is entirely written in Python and uses wxWidgets for its user interface.
+
+        The tool allows a user to query the EvE Online servers for their current skills and implants to check wheter a given character could fit a ship, as well as to provide statistics on the fit with the current character's skills.
+        In addition, it allows to store and retrieved fittings on the EvE Online server, letting the users fitting their ships in the game faster.
+    </longdescription>
+    <use>
+        <flag name="graph">Enable graph visualisations (e.g. DPS vs. distance).</flag>
+    </use>
+</pkgmetadata>
