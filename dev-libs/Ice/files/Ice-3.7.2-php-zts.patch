@@ -1,0 +1,20 @@
+--- a/php/src/php7/Init.cpp	2019-02-05 19:03:04.000000000 +0100
++++ b/php/src/php7/Init.cpp	2020-07-08 12:53:02.000000000 +0200
+@@ -161,7 +161,7 @@
+ PHP_INI_END()
+ 
+ extern "C"
+-int initIceGlobals(zend_ice_globals* g)
++void initIceGlobals(zend_ice_globals* g)
+ {
+     g->communicatorMap = 0;
+     g->idToClassInfoMap = 0;
+@@ -170,7 +170,7 @@
+     g->proxyInfoMap = 0;
+     g->exceptionInfoMap = 0;
+     g->unset = 0;
+-    return SUCCESS;
++    // return SUCCESS;
+ }
+ 
+ ZEND_MINIT_FUNCTION(ice)
